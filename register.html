@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login/Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="shorcut icon" type="image" href="logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <script>
+      function validateForm() {
+        var signupId = document.forms["signupForm"]["signup_id"].value;
+        var loginId = document.forms["loginForm"]["user_id"].value;
+        var password = document.forms["signupForm"]["signup_password"].value;
+        var confirmPassword = document.forms["signupForm"]["signup_confirm_password"].value;
+
+        if (signupId === loginId) {
+          alert("Error: ID is already taken. Please choose a different ID.");
+          return false;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Error: Passwords do not match.");
+          return false;
+        }
+      }
+    </script>
+
+    <div class="container">
+      <input type="checkbox" id="flip">
+      <div class="cover">
+        <div class="front">
+          <img src="logo.png" alt="">
+          <div class="text">
+            <span class="text-1">Welcome to <br> Ezers Chocolate Store</span>
+            <span class="text-2">Let's Dive In</span>
+          </div>
+        </div>
+        <div class="back">
+          <div class="text">
+            <span class="text-1">Complete miles of journey <br> with one step</span>
+            <span class="text-2">Let's get started</span>
+          </div>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+            <form action="login.php" method="POST" onsubmit="return validateForm()">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-id-badge"></i>
+                  <input type="text" name="user_id" placeholder="Enter Your ID" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="user_pass" id="user_password" placeholder="Password" required>
+                  <span class="password-toggle" onclick="togglePasswordVisibility('user_password', 'login-password-icon')">
+                    <i id="login-password-icon" class="fas fa-eye"></i>
+                  </span>
+                </div>
+                <div class="button input-box">
+                  <input type="submit" name="login" value="Submit">
+                </div>
+                <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+              </div>
+            </form>
+          </div>
+          <div class="signup-form">
+            <div class="title">Signup</div>
+            <form action="register.php" method="POST" onsubmit="return validateForm()" name="signupForm">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fas fa-id-badge"></i>
+                  <input type="text" name="signup_id" placeholder="Create Your ID" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="signup_name" placeholder="Enter your Name" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-phone fa-rotate-90"></i>
+                  <input type="text" name="signup_number" placeholder="Enter your Number" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-envelope"></i>
+                  <input type="text" name="signup_email" placeholder="Enter your Email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="signup_password" id="signup_password" placeholder="Enter your Password" required>
+                  <span class="password-toggle" onclick="togglePasswordVisibility('signup_password', 'password-icon')">
+                    <i id="password-icon" class="fas fa-eye"></i>
+                  </span>
+                </div>
+                <div class="input-box">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="signup_confirm_password" id="signup_confirm_password" placeholder="Confirm Password" required>
+                  <span class="password-toggle" onclick="togglePasswordVisibility('signup_confirm_password', 'confirm-password-icon')">
+                    <i id="confirm-password-icon" class="fas fa-eye"></i>
+                  </span>
+                </div>
+                <div class="button input-box">
+                  <input type="submit" name="signup_submit" value="Submit">
+                </div>
+                <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <script>
+      function togglePasswordVisibility(inputId, iconId) {
+        var passwordInput = document.getElementById(inputId);
+        var icon = document.getElementById(iconId);
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+        } else {
+          passwordInput.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+        }
+      }
+
+      function validateForm() {
+        // Form validation logic here
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(bg.jpg);
+  background-size: cover;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-card {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+  background-color: #F6DDCC;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: slide-in 1s ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-50px) translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #873600; 
+}
+
+.profile-card p {
+  margin-bottom: 10px;
+  color: #000000; 
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-card strong {
+  text-align: center;
+  width: 30%;
+  justify-content: left;
+  display: inline-flex;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #F6DDCC;
+  color: #333;
+  padding: 1px;
+  font-size: 14px;
+}
+
+.profile-title {
+  text-align: center;
+  color: #17202A;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-card i {
+  margin-right: 5px;
+  justify-content: center;
+}
+
+.edit-button {
+  float: right;
+  background-color: #6E2C00;
+  color: #FFF;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; 
+}
+
+.update-button {
+  float: right;
+  background-color: #6E2C00;
+  color: #FFF;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color.
+}
+
+.edit-button:hover,
+.update-button:hover {
+  background-color: #AF601A;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.textbox {
+  text-align: center;
+  width: 50%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 1px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.textbox:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.eye-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+
